@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>
+    <button @click="click">
       <slot>按钮</slot>
     </button>
   </div>
@@ -8,7 +8,12 @@
 
 <script>
 export default {
-  name: 'test-compontent'
+  name: 'test-compontent',
+  methods: {
+    click () {
+      this.$emit('click')
+    }
+  }
 }
 </script>
 

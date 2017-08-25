@@ -1,29 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <test-compontent>啦啦啦</test-compontent>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  mounted () {
-    this.$myMethod.success('成功')
-    this.$myMethod.warn('警告')
-    this.$myMethod.error('失败')
-  }
+  name: 'app'
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
