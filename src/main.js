@@ -4,8 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import TestComponent from './components/common/test'
 
 Vue.config.productionTip = false
+Vue.use(TestComponent, {
+  test: 'test'
+})
 
 /* eslint-disable no-new */
 new Vue({
