@@ -2,16 +2,25 @@ import TestComponent from './TestComponent'
 
 const test = {}
 
+function setTemp (type, text) {
+  let temp = document.createElement('div')
+  temp.setAttribute('class', 'toast ' + type)
+  temp.innerHTML = text
+  document.getElementById('toastbox').appendChild(temp)
+  setTimeout(() => {
+    document.getElementById('toastbox').removeChild(temp)
+  }, 3000)
+}
 test.install = function (Vue, options) {
-  Vue.prototype.$myMethod = {
+  Vue.prototype.$toast = {
     success: function (text) {
-      console.log(text)
+      setTemp('success', text)
     },
     warn: function (text) {
-      console.log(text)
+      setTemp('warn', text)
     },
     error: function (text) {
-      console.log(text)
+      setTemp('error', text)
     }
   }
 
